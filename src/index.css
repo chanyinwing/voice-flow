@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1,h2,h3{
+  font-family: 'Poppins', sans-serif;
+}
+
+.specialBtn{
+  background: white;
+  box-shadow: 0px 14px 55px rgba(255, 160, 96, 0.35);
+  transition-duration: 200ms;
+}
+
+.specialBtn:hover{
+  opacity: 0.8;
+}
