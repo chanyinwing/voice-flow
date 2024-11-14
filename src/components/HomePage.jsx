@@ -48,7 +48,7 @@ export default function HomePage(props) {
     mediaRecorder.current.stop();
     mediaRecorder.current.onstop = ()=>{
       const audioBlob = new Blob(audioChunks, {type: mimeType}) 
-      setAudioStream(audioBlob);
+     setAudioStream(audioBlob);
       setAudioChunks([])
       setDuration(0)
     }
@@ -78,7 +78,7 @@ export default function HomePage(props) {
         <p className="text-orange-400">{recordingStatus === 'inactive'? 'Record' : 'Stop Recording'}</p>
         <div className="flex items-center gap-2 ">
           {duration !== 0 && (<p className="text-sm text-slate-400">{duration}s</p>)}
-          <i className={"fa-solid duration-200 fa-microphone" + (recordingStatus === 'recording'? "text-rose-300": "")}></i>
+          <i className={"fa-solid duration-200 fa-microphone" + (recordingStatus === 'recording'? " text-rose-500": "")}></i>
         </div>
       </button>
       <p className="text-base">

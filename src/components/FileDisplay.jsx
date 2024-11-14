@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function FileDisplay(props) {
   const { file, audioStream, handleAudioReset } = props;
@@ -8,6 +8,10 @@ export default function FileDisplay(props) {
     console.log(navigator.mediaDevices)
   }
 
+  useEffect(()=>{
+    console.log(audioStream)
+  }, [audioStream])
+
   return (
     <main className="flex-1 flex flex-col items-center gap-3 sm:gap-4 md:gap-5 justify-center pb-20 max-w-full">
       <h1 className="font-semibold text-4xl sm:text-5xl md:text-6xl">
@@ -15,7 +19,7 @@ export default function FileDisplay(props) {
       </h1>
       <div className="flex flex-col">
         <h3 className="font-medium">Name</h3>
-        <p>{file.name}</p>
+        <p >{file? file.name: 'Recorded Audio: '}</p>
 
         <div className="flex my-6 justify-between gap-4 max-w-full">
           <button
